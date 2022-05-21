@@ -1,16 +1,16 @@
-import { json, ActionFunction } from "@remix-run/node";
-import { Link, Form, useActionData } from "@remix-run/react";
-import { useEffect } from "react";
-import { Button, Input, Password } from "~/components/forms";
+import { json, ActionFunction } from '@remix-run/node';
+import { Link, Form, useActionData } from '@remix-run/react';
+import { useEffect } from 'react';
+import { Button, Input, Password } from '~/components/forms';
 
 export const login = async (
   email: FormDataEntryValue | null,
   pwd: FormDataEntryValue | null
 ) => {
   const res = await fetch(`${process.env.API_URL}/auth/login`, {
-    method: "POST",
+    method: 'POST',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify({
       email,
@@ -23,8 +23,8 @@ export const login = async (
 
 export const action: ActionFunction = async ({ request }) => {
   const data = await request.formData();
-  const email = data.get("email");
-  const pwd = data.get("password");
+  const email = data.get('email');
+  const pwd = data.get('password');
   const res = await login(email, pwd);
   return json(res.token);
 };
@@ -34,7 +34,7 @@ const App = () => {
 
   useEffect(() => {
     if (token) {
-      localStorage.setItem("remix-token", token);
+      localStorage.setItem('remix-token', token);
     }
   }, [token]);
 
@@ -48,7 +48,7 @@ const App = () => {
       <div className="p-8 flex flex-row flex-wrap">
         <div className="w-full">
           <p className="mb-6">
-            Please log in or{" "}
+            Please log in or{' '}
             <Link className="text-blue-700 underline" to="/signup">
               Sign up
             </Link>

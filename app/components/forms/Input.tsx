@@ -1,5 +1,5 @@
-import { useState } from "react";
-import type { FC, ChangeEvent } from "react";
+import { useState } from 'react';
+import type { FC, ChangeEvent } from 'react';
 
 interface IInput {
   name: string;
@@ -14,7 +14,7 @@ export const Input: FC<IInput> = ({
   disabled = false,
   className,
 }) => {
-  const [input, setInput] = useState("");
+  const [input, setInput] = useState('');
 
   return (
     <input
@@ -23,7 +23,7 @@ export const Input: FC<IInput> = ({
       disabled={disabled}
       placeholder={placeholder}
       defaultValue={input}
-      autoComplete={"off"}
+      autoComplete={'off'}
       onChange={(e: ChangeEvent<HTMLInputElement>) => setInput(e.target.value)}
       className={`block w-full rounded border border-solid p-4 text-sm shadow-sm dark:bg-gray-900 dark:border-gray-700 dark:text-white ${className}`}
     />

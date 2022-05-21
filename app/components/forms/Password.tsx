@@ -1,6 +1,6 @@
-import { useState } from "react";
-import type { FC, ChangeEvent } from "react";
-import { IoEyeOffOutline, IoEyeOutline } from "react-icons/io5";
+import { useState } from 'react';
+import type { FC, ChangeEvent } from 'react';
+import { IoEyeOffOutline, IoEyeOutline } from 'react-icons/io5';
 
 interface IPassword {
   name: string;
@@ -17,13 +17,13 @@ export const Password: FC<IPassword> = ({
   className,
   showPasswordOption = true,
 }) => {
-  const [pwd, setPwd] = useState("");
+  const [pwd, setPwd] = useState('');
   const [showingPwd, setShowingPwd] = useState(false);
 
   return (
     <div className="relative">
       <input
-        type={showingPwd ? "text" : "password"}
+        type={showingPwd ? 'text' : 'password'}
         name={name}
         disabled={disabled}
         placeholder={placeholder}

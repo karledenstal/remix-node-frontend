@@ -1,4 +1,4 @@
-import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import type { LinksFunction, MetaFunction } from '@remix-run/node';
 import {
   Links,
   LiveReload,
@@ -6,37 +6,37 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from "@remix-run/react";
+} from '@remix-run/react';
 
-import styles from "./tailwind.css";
+import styles from './tailwind.css';
 
 export const meta: MetaFunction = () => ({
-  charset: "utf-8",
-  title: "Test",
-  viewport: "width=device-width,initial-scale=1",
+  charset: 'utf-8',
+  title: 'Test',
+  viewport: 'width=device-width,initial-scale=1',
 });
 
 export const links: LinksFunction = () => [
   {
-    rel: "stylesheet",
-    href: "https://use.typekit.net/kgo2xfl.css",
+    rel: 'stylesheet',
+    href: 'https://use.typekit.net/kgo2xfl.css',
   },
   {
-    rel: "stylesheet",
+    rel: 'stylesheet',
     href: styles,
   },
   {
-    rel: "preconnect",
-    href: "https://fonts.googleapis.com",
+    rel: 'preconnect',
+    href: 'https://fonts.googleapis.com',
   },
   {
-    rel: "preconnect",
-    href: "https://fonts.gstatic.com",
-    crossOrigin: "anonymous",
+    rel: 'preconnect',
+    href: 'https://fonts.gstatic.com',
+    crossOrigin: 'anonymous',
   },
   {
-    rel: "stylesheet",
-    href: "https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,700;1,100;1,200;1,300;1,400;1,700&display=swap",
+    rel: 'stylesheet',
+    href: 'https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,700;1,100;1,200;1,300;1,400;1,700&display=swap',
   },
 ];
 
