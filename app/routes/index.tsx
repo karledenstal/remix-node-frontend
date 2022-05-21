@@ -1,5 +1,5 @@
 import { json, ActionFunction } from "@remix-run/node";
-import { Link, Form, useActionData } from "@remix-run/react";
+import { Link, Form } from "@remix-run/react";
 import { Button } from "~/components/forms/Button";
 import { Input } from "~/components/forms/Input";
 import { Password } from "~/components/forms/Password";
@@ -33,13 +33,9 @@ export const action: ActionFunction = async ({ request }) => {
 };
 
 const App = () => {
-  const actionData = useActionData();
-
-  console.log(actionData);
-
   return (
-    <div className="w-4/12 container mx-auto bg-white rounded font-body shadow-sm">
-      <div className="p-8 border-b">
+    <div className="w-4/12 container mx-auto bg-white dark:bg-black dark:text-white rounded font-body shadow-sm">
+      <div className="p-8 border-b dark:border-gray-800">
         <h1 className="m-0 font-display font-extrabold text-6xl text-indigo-500">
           Soothe
         </h1>

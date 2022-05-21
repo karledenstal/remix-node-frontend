@@ -29,7 +29,7 @@ export const Password: FC<IPassword> = ({
         placeholder={placeholder}
         defaultValue={pwd}
         onChange={(e: ChangeEvent<HTMLInputElement>) => setPwd(e.target.value)}
-        className={`block w-full rounded border border-solid p-4 text-sm shadow-sm ${className}`}
+        className={`block w-full rounded border border-solid p-4 text-sm shadow-sm dark:bg-gray-900 dark:border-gray-700 dark:text-white ${className}`}
       />
       {showPasswordOption && !showingPwd && (
         <IoEyeOffOutline

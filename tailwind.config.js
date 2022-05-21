@@ -1,4 +1,5 @@
 module.exports = {
+  darkMode: "night",
   content: ["./app/**/*.{ts,tsx,jsx,js}"],
   theme: {
     fontFamily: {

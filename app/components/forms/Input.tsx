@@ -25,7 +25,7 @@ export const Input: FC<IInput> = ({
       defaultValue={input}
       autoComplete={"off"}
       onChange={(e: ChangeEvent<HTMLInputElement>) => setInput(e.target.value)}
-      className={`block w-full rounded border border-solid p-4 text-sm shadow-sm autofill:font-body ${className}`}
+      className={`block w-full rounded border border-solid p-4 text-sm shadow-sm dark:bg-gray-900 dark:border-gray-700 dark:text-white ${className}`}
     />
   );
 };
