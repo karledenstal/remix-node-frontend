@@ -1,4 +1,4 @@
-import { redirect } from "@remix-run/node";
+import { json } from "@remix-run/node";
 import type { ActionFunction } from "@remix-run/node";
 import { Link, Form, useActionData } from "@remix-run/react";
 import { Button } from "~/components/forms/Button";
@@ -11,7 +11,7 @@ export const login = async (
 ) => {
   console.log("email", email);
   console.log("pwd", pwd);
-  const res = await fetch("http://localhost:9000/api/auth/login", {
+  const res = await fetch(`${process.env.API_URL}/auth/login`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -30,8 +30,7 @@ export const action: ActionFunction = async ({ request }) => {
   const email = data.get("email");
   const pwd = data.get("password");
   const res = await login(email, pwd);
-  console.log("res", res);
-  return redirect("/");
+  return json(res);
 };
 
 const App = () => {
@@ -54,7 +53,7 @@ const App = () => {
               Sign up
             </Link>
           </p>
-          <Form method="post">
+          <Form method="post" reloadDocument>
             <Input name="email" className="mb-2" />
             <Password name="password" className="mb-2" />
             <Button>log in</Button>
