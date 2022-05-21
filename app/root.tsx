@@ -42,12 +42,12 @@ export const links: LinksFunction = () => [
 
 export default function App() {
   return (
-    <html lang="en">
+    <html lang="en" className="h-full">
       <head>
         <Meta />
         <Links />
       </head>
-      <body className="bg-gradient-to-br from-indigo-600 to-violet-600 bg-fixed mt-4">
+      <body className="flex flex-wrap flex-column justify-center items-center bg-gradient-to-br from-indigo-600 to-violet-600 bg-fixed h-full">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
