@@ -1,5 +1,4 @@
-import { json } from "@remix-run/node";
-import type { ActionFunction } from "@remix-run/node";
+import { json, ActionFunction } from "@remix-run/node";
 import { Link, Form, useActionData } from "@remix-run/react";
 import { Button } from "~/components/forms/Button";
 import { Input } from "~/components/forms/Input";
