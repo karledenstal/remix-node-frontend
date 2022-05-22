@@ -1,4 +1,4 @@
-import { json, ActionFunction } from '@remix-run/node';
+import { json, ActionFunction, redirect } from '@remix-run/node';
 import { Link, Form, useActionData } from '@remix-run/react';
 import { useEffect } from 'react';
 import { Button, Input, Password } from '~/components/forms';
@@ -26,7 +26,7 @@ export const action: ActionFunction = async ({ request }) => {
   const email = data.get('email');
   const pwd = data.get('password');
   const res = await login(email, pwd);
-  return json(res.token);
+  return redirect("/users");
 };
 
 const App = () => {
@@ -53,7 +53,7 @@ const App = () => {
               Sign up
             </Link>
           </p>
-          <Form method="post" reloadDocument>
+          <Form method="post">
             <Input name="email" className="mb-2" />
             <Password name="password" className="mb-2" />
             <Button>log in</Button>
